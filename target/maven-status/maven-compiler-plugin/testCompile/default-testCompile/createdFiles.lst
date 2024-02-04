@@ -1,0 +1,4 @@
+com\petstore\payload\Pet.class
+com\petstore\api\endpoints\Routes.class
+com\petstore\api\test\PetRegressionSuite.class
+com\petstore\api\endpoints\PetEndPoints.class
