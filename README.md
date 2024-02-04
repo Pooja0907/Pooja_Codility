@@ -8,5 +8,5 @@ Please execute the following steps to run this project from the command line.
 
 2 **cd>>folder path**( up to the project folder)
 
-3 **mvn clean test -Dtest=PetRegressionSuite** (Execution will start and provide the result on the console.
+3 **mvn clean test -Dtest=PetRegressionSuite** (Execution will start and result will display on the console)
 
