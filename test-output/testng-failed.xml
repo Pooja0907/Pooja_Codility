@@ -3,15 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.petstore.api.test.PetRegressionSuit">
+      <class name="com.petstore.api.test.PetRegressionSuite">
         <methods>
-          <include name="testDeleteUserByName"/>
-          <include name="testPostUser"/>
-          <include name="testUpdateExistingPet"/>
           <include name="setup"/>
-          <include name="testGetPetById"/>
+          <include name="testUpdateExistingPet"/>
         </methods>
-      </class> <!-- com.petstore.api.test.PetRegressionSuit -->
+      </class> <!-- com.petstore.api.test.PetRegressionSuite -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

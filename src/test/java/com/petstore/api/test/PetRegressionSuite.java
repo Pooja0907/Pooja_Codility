@@ -1,10 +1,13 @@
 package com.petstore.api.test;
 
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 import com.github.javafaker.Faker;
 import com.petstore.api.endpoints.PetEndPoints;
 import com.petstore.payload.Pet;
@@ -15,6 +18,7 @@ public class PetRegressionSuite {
 
 	Faker faker;
 	Pet petPayload;
+	Pet updatedPetPayload;
 
 	public Logger logger;
 
@@ -22,14 +26,17 @@ public class PetRegressionSuite {
 	public void setup() {
 		faker = new Faker();
 		petPayload = new Pet();
-
 		petPayload.setId(faker.idNumber().hashCode());
-
 		petPayload.setName(faker.name().firstName());
+		
+		updatedPetPayload =new Pet();
+		updatedPetPayload.setId(faker.number().randomDigit());
+		updatedPetPayload.setName(faker.name().firstName());
 
 		// logs
 		logger = LogManager.getLogger(this.getClass());
 		logger.debug("debugging.....");
+		
 		
 
 	}
@@ -39,11 +46,14 @@ public class PetRegressionSuite {
 		logger.info("********** Creating pet  ***************");
 		Response response = PetEndPoints.addPet(petPayload);
 		response.then().log().all();
+		int idn = response.path("id");
+		String dogName=response.path("name");
 
 		Assert.assertEquals(response.getStatusCode(), 200);
 
 		logger.info("**********pet is created  ***************");
-		
+		Assert.assertEquals(idn,petPayload.getId());
+		Assert.assertEquals(dogName,petPayload.getName());
 
 	}
 
@@ -53,7 +63,11 @@ public class PetRegressionSuite {
 
 		Response response = PetEndPoints.getPet(this.petPayload.getId());
 		response.then().log().all();
+		int dogId = response.path("id");
+		String dogName=response.path("name");
 		Assert.assertEquals(response.getStatusCode(), 200);
+		Assert.assertEquals(dogId,petPayload.getId());
+		Assert.assertEquals(dogName,petPayload.getName());
 
 		logger.info("**********pet   is found ***************");
 
@@ -61,17 +75,25 @@ public class PetRegressionSuite {
 
 	@Test(priority = 3)
 	public void testUpdateExistingPet() {
-		logger.info("********** Updating pet ***************");
+		logger.info("********** data before updating the pet ***************");
 
 		Response response = PetEndPoints.updatePet(petPayload);
-		response.then().log().body();
-
+		response.then().log().all();
+		
 		Assert.assertEquals(response.getStatusCode(), 200);
 
-		logger.info("********** pet updated ***************");
+		logger.info("********** updating pet  ***************");
 
-		Response responseAfterupdate = PetEndPoints.getPet(this.petPayload.getId());
+		Response responseAfterupdate = PetEndPoints.updatePet(updatedPetPayload);
+
+		logger.info("********** response after updating pet  ***************");
+
+		responseAfterupdate.then().log().all();
+		int updatedDogId=responseAfterupdate.path("id");
+		String updatedDogName=responseAfterupdate.path("name");
 		Assert.assertEquals(responseAfterupdate.getStatusCode(), 200);
+		Assert.assertEquals(updatedDogId,updatedPetPayload.getId());
+		Assert.assertEquals(updatedDogName,updatedPetPayload.getName());
 
 	}
 

@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-04T19:02:13 AEDT" name="PetSuite" finished-at="2024-02-04T19:02:21 AEDT" duration-ms="8039">
+  <suite started-at="2024-02-07T22:14:09 AEDT" name="Default suite" finished-at="2024-02-07T22:14:23 AEDT" duration-ms="14123">
     <groups>
     </groups>
-    <test started-at="2024-02-04T19:02:13 AEDT" name="PetTests" finished-at="2024-02-04T19:02:21 AEDT" duration-ms="8039">
+    <test started-at="2024-02-07T22:14:09 AEDT" name="Default test" finished-at="2024-02-07T22:14:23 AEDT" duration-ms="14123">
       <class name="com.petstore.api.test.PetRegressionSuite">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.petstore.api.test.PetRegressionSuite@5a56cdac]" started-at="2024-02-04T19:02:13 AEDT" name="setup" finished-at="2024-02-04T19:02:13 AEDT" duration-ms="556" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.petstore.api.test.PetRegressionSuite@5a56cdac]" started-at="2024-02-07T22:14:09 AEDT" name="setup" finished-at="2024-02-07T22:14:10 AEDT" duration-ms="1070" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testPostUser()[pri:1, instance:com.petstore.api.test.PetRegressionSuite@5a56cdac]" started-at="2024-02-04T19:02:13 AEDT" name="testPostUser" finished-at="2024-02-04T19:02:16 AEDT" duration-ms="2845" status="PASS">
+        <test-method signature="testAddPet()[pri:1, instance:com.petstore.api.test.PetRegressionSuite@5a56cdac]" started-at="2024-02-07T22:14:10 AEDT" name="testAddPet" finished-at="2024-02-07T22:14:16 AEDT" duration-ms="5908" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPostUser -->
-        <test-method signature="testGetPetById()[pri:2, instance:com.petstore.api.test.PetRegressionSuite@5a56cdac]" started-at="2024-02-04T19:02:16 AEDT" name="testGetPetById" finished-at="2024-02-04T19:02:17 AEDT" duration-ms="1178" status="PASS">
+        </test-method> <!-- testAddPet -->
+        <test-method signature="testGetPetById()[pri:2, instance:com.petstore.api.test.PetRegressionSuite@5a56cdac]" started-at="2024-02-07T22:14:16 AEDT" name="testGetPetById" finished-at="2024-02-07T22:14:18 AEDT" duration-ms="1824" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetPetById -->
-        <test-method signature="testUpdateExistingPet()[pri:3, instance:com.petstore.api.test.PetRegressionSuite@5a56cdac]" started-at="2024-02-04T19:02:17 AEDT" name="testUpdateExistingPet" finished-at="2024-02-04T19:02:20 AEDT" duration-ms="2296" status="PASS">
+        <test-method signature="testUpdateExistingPet()[pri:3, instance:com.petstore.api.test.PetRegressionSuite@5a56cdac]" started-at="2024-02-07T22:14:18 AEDT" name="testUpdateExistingPet" finished-at="2024-02-07T22:14:21 AEDT" duration-ms="3546" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUpdateExistingPet -->
-        <test-method signature="testDeleteUserByName()[pri:4, instance:com.petstore.api.test.PetRegressionSuite@5a56cdac]" started-at="2024-02-04T19:02:20 AEDT" name="testDeleteUserByName" finished-at="2024-02-04T19:02:21 AEDT" duration-ms="1122" status="PASS">
+        <test-method signature="testDeletePetById()[pri:4, instance:com.petstore.api.test.PetRegressionSuite@5a56cdac]" started-at="2024-02-07T22:14:21 AEDT" name="testDeletePetById" finished-at="2024-02-07T22:14:23 AEDT" duration-ms="1704" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDeleteUserByName -->
+        </test-method> <!-- testDeletePetById -->
       </class> <!-- com.petstore.api.test.PetRegressionSuite -->
-    </test> <!-- PetTests -->
-  </suite> <!-- PetSuite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
